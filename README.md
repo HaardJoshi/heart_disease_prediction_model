@@ -12,7 +12,7 @@ This repository contains a Jupyter Notebook that uses the **K-Nearest Neighbors 
 
 ### Option 1: Run in Google Colab
 To easily run the notebook in Google Colab without setting up a local environment, click the link below:
-[Open in Google Colab](https://colab.research.google.com/github/yourusername/heart-disease-prediction-knn/blob/main/model.ipynb)
+[Open in Google Colab](https://colab.research.google.com/github/haardjoshi/heart_disease_prediction/blob/main/model.ipynb)
 
 ### Option 2: Run on Your Local Machine
 To run the notebook locally, follow these steps:
