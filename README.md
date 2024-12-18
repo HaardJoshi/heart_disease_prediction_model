@@ -52,8 +52,8 @@ Predict whether an individual is at risk of heart disease based on medical and d
 ### Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/<your-username>/heart-disease-knn.git
-   cd heart-disease-knn
+   git clone https://github.com/<your-username>/heart_disease_prediction_model.git
+   cd model
    ```
 2. Install dependencies:
    ```bash
@@ -62,7 +62,7 @@ Predict whether an individual is at risk of heart disease based on medical and d
 
 3. Run the Jupyter Notebook:
    ```bash
-   jupyter notebook heart_disease_knn.ipynb
+   jupyter notebook model.ipynb
    ```
 
 ## Results
