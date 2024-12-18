@@ -1,49 +1,89 @@
-# Heart Disease Prediction Using K-Nearest Neighbors (KNN)
+# Heart Disease Risk Prediction Using KNN
 
-This repository contains a Jupyter Notebook that uses the **K-Nearest Neighbors (KNN)** algorithm to predict the risk of heart disease based on medical features. The dataset contains various health-related attributes such as age, cholesterol levels, blood pressure, and others, which are used to classify whether a person is at risk of heart disease or not.
+![Project Status](https://img.shields.io/badge/Status-Completed-green)
 
-## Project Overview:
-- **Goal**: Predict whether a patient is at risk of heart disease based on health features.
-- **Dataset**: The dataset used for this project contains several medical features such as age, sex, cholesterol, etc., and a binary target indicating whether a person is at risk of heart disease.
-- **Algorithm**: The **K-Nearest Neighbors (KNN)** algorithm is used to make predictions.
-- **Model Evaluation**: The model is evaluated using classification metrics like accuracy, precision, recall, and F1 score.
+## Overview
+This project implements a **K-Nearest Neighbors (KNN)** model to predict the risk of heart disease using a structured dataset. The workflow adheres to the standard Data Science Lifecycle, including data preprocessing, model training, hyperparameter optimization, and evaluation.
 
-## Running the Notebook
+## Table of Contents
+1. [Problem Statement](#problem-statement)
+2. [Dataset Overview](#dataset-overview)
+3. [Project Workflow](#project-workflow)
+4. [Setup and Installation](#setup-and-installation)
+5. [Results](#results)
+6. [Key Features](#key-features)
+7. [Future Improvements](#future-improvements)
+8. [Contributors](#contributors)
 
-### Run on Your Local Machine
-To run the notebook locally, follow these steps:
+---
 
-1. **Clone this repository** to your local machine:
+## Problem Statement
+Predict whether an individual is at risk of heart disease based on medical and demographic features.
+
+## Dataset Overview
+- **Source**: `data-heart.csv`
+- **Size**: 303 samples, 14 features.
+- **Target Variable**: `target` (1 = at risk, 0 = no risk).
+- **Features**: Age, sex, cholesterol, blood pressure, etc.
+
+## Project Workflow
+1. **Data Preparation**:
+   - Load the dataset.
+   - Scale the features using `StandardScaler`.
+2. **Modeling**:
+   - Train a KNN classifier.
+   - Optimize hyperparameters (`n_neighbors`, `random_state`) using grid search.
+3. **Evaluation**:
+   - Compute metrics: Accuracy, Precision, Recall, F1-score.
+   - Visualize results with confusion matrices and accuracy plots.
+
+## Setup and Installation
+
+### Prerequisites
+- Python 3.8+
+- Libraries:
+  - `pandas`
+  - `numpy`
+  - `matplotlib`
+  - `seaborn`
+  - `scikit-learn`
+  - `plotly` (optional for advanced visualizations)
+
+### Installation
+1. Clone the repository:
    ```bash
-   git clone https://github.com/HaardJoshi/heart-disease-prediction-knn.git
+   git clone https://github.com/<your-username>/heart-disease-knn.git
+   cd heart-disease-knn
+   ```
+2. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
    ```
 
-2. **Navigate to the project directory**:
+3. Run the Jupyter Notebook:
    ```bash
-   cd heart-disease-prediction-knn
+   jupyter notebook heart_disease_knn.ipynb
    ```
 
-3. **Install dependencies**:
-   - Make sure you have Python 3.x installed.
-   - Install the required Python libraries using `pip`:
-     ```bash
-     pip install -r requirements.txt
-     ```
+## Results
+- **Best Accuracy**: 98.36%
+- **Optimal Hyperparameters**:
+  - `n_neighbors`: 19
+  - `random_state`: 72
+- **Confusion Matrix**:
+  ```
+  [[27, 3],
+   [ 3, 28]]
+  ```
 
-4. **Run the notebook**:
-   - Open the notebook in Jupyter Notebook:
-     ```bash
-     jupyter notebook
-     ```
+## Key Features
+- Implements a full pipeline for training, optimizing, and evaluating a KNN classifier.
+- Hyperparameter optimization visualized through:
+  - Accuracy vs. `n_neighbors` plot.
+  - 3D scatter plots for `n_neighbors` and `random_state`.
+- Outputs a detailed classification report for performance evaluation.
 
-5. **Access the notebook** in your browser, and open the `model.ipynb` file.
-
-## Description of the Notebook
-
-The notebook `model.ipynb` includes the following steps:
-
-1. **Data Exploration**: We start by loading the dataset, checking its basic structure, and visualizing the data.
-2. **Data Preprocessing**: The dataset is cleaned, and necessary transformations are applied (e.g., scaling the features).
-3. **Model Training**: The K-Nearest Neighbors (KNN) algorithm is trained on the dataset to classify the risk of heart disease.
-4. **Model Evaluation**: The model's performance is evaluated using accuracy, confusion matrix, and other classification metrics.
-5. **Hyperparameter Tuning**: The notebook also explores finding the best number of neighbors for the KNN model.
+## Future Improvements
+- Explore other machine learning models (e.g., Random Forest, Gradient Boosting).
+- Incorporate cross-validation for robust performance metrics.
+- Add a feature selection step to simplify the model.
